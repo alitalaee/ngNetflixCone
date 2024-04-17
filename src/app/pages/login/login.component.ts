@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
-  router=  inject(Router);
+  router = inject(Router);
 
   ngOnInit() {
     google.accounts.id.initialize({
@@ -42,11 +42,38 @@ export class LoginComponent {
       const credential = this.checkJWT(response.credential)
       console.log(credential);
       //set storage 
-      sessionStorage.setItem('netflix_user' , JSON.stringify(credential));
+      sessionStorage.setItem('netflix_user', JSON.stringify(credential));
       //navigate to home
       this.router.navigateByUrl('browse');
     }
 
   }
 
+
+
+  // Home Introduction banners Contennt 
+  homeIntroBanners = [
+    {
+      title: 'Enjoy on your TV',
+      subtitle: 'Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.',
+      banner: '../../../assets/tv.png',
+      insideBanner: "../../../assets/video-tv-0819.m4v",
+      decore: "right",
+    },
+    {
+      title: 'Download your programmes to watch offline',
+      subtitle: 'Save your favourites easily and always have something to watch.',
+      banner: '',
+      insideBanner: "../../../assets/download.mov",
+      decore: "left",
+    },
+    {
+      title: 'Watch everywhere',
+      subtitle: 'Stream unlimited films and TV programmes on your phone, tablet, laptop and TV.',
+      banner: '../../../assets/device-pile.png',
+      insideBanner: "../../../assets/video-devices.m4v",
+      videoCssClass:"top-[41px] w-[312px] left-[98px] absolute  h-[211px]",
+      decore: "right",
+    }
+  ]
 }

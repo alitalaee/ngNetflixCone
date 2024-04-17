@@ -1,0 +1,11 @@
+<!-- Header -->
+<app-header></app-header>
+<!-- First Banner -->
+<app-home-intro></app-home-intro>
+<!-- Intro banners -->
+<span *ngFor="let banner of homeIntroBanners">
+    <app-home-intro-banner [homeIntroBanners]="banner" ></app-home-intro-banner>
+</span>
+
+
+<div id="google-btn"></div>

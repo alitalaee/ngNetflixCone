@@ -1,0 +1,9 @@
+<div class="container-fluid">
+    <div>{{header}}</div>
+    <swiper-container swiperConfig #swiperContainer [config]="swiperMovieConfig">
+        <swiper-slide *ngFor="let item of IVideoContent">
+            <img src="https://image.tmdb.org/t/p/w500{{item.poster_path}}" alt="">
+            <p>{{item.original_title}}</p>
+        </swiper-slide>
+    </swiper-container>
+</div>
